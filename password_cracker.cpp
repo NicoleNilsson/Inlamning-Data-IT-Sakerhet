@@ -49,6 +49,24 @@ void matchPassword(const std::string hash, int algorithm){
     }
 }
 
+//BLIR FÖR STOR FIL PÅ GITHUB
+// void spicySetUp(){
+//     std::string line;
+//     std::ifstream inFile("commonpw.dict", std::ios::in);
+
+//     std::ofstream outFile("spicypw.dict", std::ios::app);
+
+//     while(inFile){    
+//         std::getline(inFile, line);
+//         outFile << line << std::endl;
+//         for(int i = 1940 ; i == 2024 ; i++){
+//            outFile << line + std::to_string(i) << std::endl;
+//         }
+//     }
+
+//     outFile.close();
+// }
+
 void spicySetUp(){
     std::string line;
     std::ifstream inFile("commonpw.dict", std::ios::in);
@@ -58,9 +76,7 @@ void spicySetUp(){
     while(inFile){    
         std::getline(inFile, line);
         outFile << line << std::endl;
-        for(int i = 1940 ; i == 2024 ; i++){
-           outFile << line + std::to_string(i) << std::endl;
-        }
+        outFile << line + "2024" << std::endl;
     }
 
     outFile.close();
@@ -70,7 +86,7 @@ void MD5HashFile(){
     std::string line;
     std::ifstream inFile("spicypw.dict", std::ios::in);
 
-    std::ofstream outFile("hashesMD5.txt", std::ios::app);
+    std::ofstream outFile("hashesMD5.txt", std::ios::out);
 
     while(inFile){    
         std::getline(inFile, line);
@@ -105,7 +121,7 @@ void SHA256HashFile(){
     std::string line;
     std::ifstream inFile("spicypw.dict", std::ios::in);
 
-    std::ofstream outFile("hashesSHA.txt", std::ios::app);
+    std::ofstream outFile("hashesSHA.txt", std::ios::out);
 
     while(inFile){    
         std::getline(inFile, line);
