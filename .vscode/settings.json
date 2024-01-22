@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\nicol\\_Dev\\_DataITSakerhet\\Inlamning-Data_IT-Sakerhet kopia",
+            "binaryPath": "c:\\Users\\nicol\\_Dev\\_DataITSakerhet\\Inlamning-Data_IT-Sakerhet kopia\\main.exe",
+            "binaryArgs": []
+        }
+    ]
+}
