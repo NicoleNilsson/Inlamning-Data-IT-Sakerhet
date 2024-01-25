@@ -86,7 +86,7 @@ void MD5HashFile(){
     std::string line;
     std::ifstream inFile("spicypw.dict", std::ios::in);
 
-    std::ofstream outFile("hashesMD5.txt", std::ios::out);
+    std::ofstream outFile("hashesMD5.txt", std::ios::app);
 
     while(inFile){    
         std::getline(inFile, line);
@@ -97,7 +97,6 @@ void MD5HashFile(){
 }
 
 std::string MD5Hash(const std::string& input) {
-    MD5_CTX md5Context;
     EVP_MD_CTX *mdctx = EVP_MD_CTX_new();
 
     EVP_DigestInit_ex(mdctx, EVP_md5(), NULL);
@@ -121,7 +120,7 @@ void SHA256HashFile(){
     std::string line;
     std::ifstream inFile("spicypw.dict", std::ios::in);
 
-    std::ofstream outFile("hashesSHA.txt", std::ios::out);
+    std::ofstream outFile("hashesSHA.txt", std::ios::app);
 
     while(inFile){    
         std::getline(inFile, line);

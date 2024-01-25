@@ -8,6 +8,7 @@ int main() {
     //TODO
     //max antal inloggningsförsök?
     //tester?
+    //fixa "menyn" i passsword cracker
     return 0;
 }
 

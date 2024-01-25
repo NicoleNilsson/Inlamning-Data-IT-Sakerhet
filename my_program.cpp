@@ -91,7 +91,7 @@ void MyProgram::createPassword(Account &account){
                 << "at least one special character" << std::endl 
                 << std::endl;
     
-    loop: while(1){       
+    while(1){       
         std::cout << "Enter password: " << std::endl;
         std::getline(std::cin, password);
 
@@ -169,7 +169,6 @@ std::string MyProgram::createSALT() {
 
 // 100% tog fram denna med chatGPT
 std::string MyProgram::hashPassword(const std::string& input) {
-    MD5_CTX md5Context;
     EVP_MD_CTX *mdctx = EVP_MD_CTX_new();
 
     EVP_DigestInit_ex(mdctx, EVP_md5(), NULL);
