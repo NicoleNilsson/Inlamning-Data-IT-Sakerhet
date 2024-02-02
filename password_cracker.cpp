@@ -10,18 +10,24 @@
 void defNotHackerMenu(){
     while(1){
         std::string input;
-        std::cout << "Would you like to compare a MD5 or SHA256 hash? (1/2)" << std::endl;
-        std::getline(std::cin, input);
-        std::cout << "Enter hash or press 0 to exit: ";
         std::string hash;
-        std::getline(std::cin, hash);
+        std::cout << "1. Compare MD5 hash" << std::endl 
+                    << "2. Compare SHA256 hash" << std::endl 
+                    << "9. Exit" << std::endl;
+        std::getline(std::cin, input);
 
-        if(hash == "0"){
+        if(input == "9"){
             return;
         }else if(input == "1"){
-            matchPassword(hash, 1);
+            std::cout << "Enter hash: ";
+            std::getline(std::cin, hash);
+            matchPassword(hash, USE_MD5);
+
         }else if(input == "2"){
-            matchPassword(hash, 2);
+            std::cout << "Enter hash: ";
+            std::getline(std::cin, hash);
+            matchPassword(hash, USE_SHA256);
+
         }else{
             std::cout << "Invalid choice" << std::endl;
         }
@@ -32,9 +38,9 @@ void matchPassword(const std::string hash, int algorithm){
     std::string foundPassword;
     std::string foundHash;
     std::ifstream inFile;
-    if(algorithm == 1){
+    if(algorithm == USE_MD5){
         inFile.open("hashesMD5.txt", std::ios::in);
-    }else if(algorithm == 2){
+    }else if(algorithm == USE_SHA256){
         inFile.open("hashesSHA.txt", std::ios::in);
     }
 
@@ -49,43 +55,9 @@ void matchPassword(const std::string hash, int algorithm){
     }
 }
 
-//BLIR FÖR STOR FIL PÅ GITHUB
-// void spicySetUp(){
-//     std::string line;
-//     std::ifstream inFile("commonpw.dict", std::ios::in);
-
-//     std::ofstream outFile("spicypw.dict", std::ios::app);
-
-//     while(inFile){    
-//         std::getline(inFile, line);
-//         outFile << line << std::endl;
-//         for(int i = 1940 ; i == 2024 ; i++){
-//            outFile << line + std::to_string(i) << std::endl;
-//         }
-//     }
-
-//     outFile.close();
-// }
-
-void spicySetUp(){
-    std::string line;
-    std::ifstream inFile("commonpw.dict", std::ios::in);
-
-    std::ofstream outFile("spicypw.dict", std::ios::app);
-
-    while(inFile){    
-        std::getline(inFile, line);
-        outFile << line << std::endl;
-        outFile << line + "2024" << std::endl;
-    }
-
-    outFile.close();
-}
-
 void MD5HashFile(){
     std::string line;
     std::ifstream inFile("spicypw.dict", std::ios::in);
-
     std::ofstream outFile("hashesMD5.txt", std::ios::app);
 
     while(inFile){    
@@ -141,3 +113,37 @@ std::string SHA256Hash(const std::string& input) {
     }
     return ss.str();
 }
+
+
+
+
+void spicySetUp(){
+    std::string line;
+    std::ifstream inFile("commonpw.dict", std::ios::in);
+    std::ofstream outFile("spicypw.dict", std::ios::app);
+
+    while(inFile){    
+        std::getline(inFile, line);
+        outFile << line << std::endl;
+        outFile << line + "2024" << std::endl;
+    }
+
+    outFile.close();
+}
+//BLIR FÖR STOR FIL PÅ GITHUB
+// void spicySetUp(){
+//     std::string line;
+//     std::ifstream inFile("commonpw.dict", std::ios::in);
+
+//     std::ofstream outFile("spicypw.dict", std::ios::app);
+
+//     while(inFile){    
+//         std::getline(inFile, line);
+//         outFile << line << std::endl;
+//         for(int i = 1940 ; i == 2024 ; i++){
+//            outFile << line + std::to_string(i) << std::endl;
+//         }
+//     }
+
+//     outFile.close();
+// }

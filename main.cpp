@@ -6,7 +6,6 @@ int main() {
     program.mainMenu();
     defNotHackerMenu();
     //TODO
-    //max antal inloggningsförsök?
     //tester?
     //fixa "menyn" i passsword cracker
     return 0;

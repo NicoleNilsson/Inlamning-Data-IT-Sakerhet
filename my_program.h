@@ -20,7 +20,6 @@ private:
             NO_UPPER_CASE,
             NO_LOWER_CASE,
             LOG_IN_SUCCESS,
-            // USER_FOUND,
             USER_NOT_FOUND,
             WRONG_PASSWORD,
     };
