@@ -34,7 +34,7 @@ void defNotHackerMenu(){
     }
 }
 
-void matchPassword(const std::string hash, int algorithm){
+void matchPassword(const std::string hash, const int algorithm){
     std::string foundPassword;
     std::string foundHash;
     std::ifstream inFile;
@@ -48,12 +48,18 @@ void matchPassword(const std::string hash, int algorithm){
         std::getline(inFile, foundPassword, ':');
         std::getline(inFile, foundHash);
         if(foundHash == hash){
-            std::cout << "Match found!" << std::endl << "Password = " << foundPassword << std::endl;
-        }else{
-            std::cout << "Sorry, no match :(" << std::endl;
+            std::cout << "Match found!" << std::endl << hash << " = " << foundPassword << std::endl;
+            return;
         }
     }
+    std::cout << "Sorry, no match :(" << std::endl;
+    inFile.close();
 }
+
+
+
+
+
 
 void MD5HashFile(){
     std::string line;

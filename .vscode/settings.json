@@ -9,6 +9,11 @@
             "cwd": "c:\\Users\\nicol\\_Dev\\_DataITSakerhet\\Inlamning-Data_IT-Sakerhet",
             "binaryPath": "c:\\Users\\nicol\\_Dev\\_DataITSakerhet\\Inlamning-Data_IT-Sakerhet\\main.exe",
             "binaryArgs": []
+        },
+        {
+            "cwd": "c:\\Users\\nicol\\_Dev\\_DataITSakerhet\\Inlamning-Data-IT-Sakerhet",
+            "binaryPath": "c:\\Users\\nicol\\_Dev\\_DataITSakerhet\\Inlamning-Data-IT-Sakerhet\\main.exe",
+            "binaryArgs": []
         }
     ],
     "files.associations": {

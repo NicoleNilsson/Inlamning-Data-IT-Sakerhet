@@ -167,7 +167,6 @@ std::string MyProgram::createSALT() {
     return SALT;
 }
 
-// 100% tog fram denna med chatGPT
 std::string MyProgram::hashPassword(const std::string& input) {
     EVP_MD_CTX *mdctx = EVP_MD_CTX_new();
 
@@ -222,7 +221,7 @@ void MyProgram::enterLogInDetails(){
     }
 }
 
-int MyProgram::logIn(std::string userName, std::string password){
+int MyProgram::logIn(const std::string userName, const std::string password){
     std::ifstream inFile("accounts.txt", std::ios::in);
 
     //using different variables so code is easier to understand

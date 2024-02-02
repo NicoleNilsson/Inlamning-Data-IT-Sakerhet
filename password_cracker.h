@@ -9,7 +9,7 @@ enum hashMethod{
 };
 
 void defNotHackerMenu();
-void matchPassword(const std::string hash, int algorithm);
+void matchPassword(const std::string hash, const int algorithm);
 
 std::string MD5Hash(const std::string& input);
 std::string SHA256Hash(const std::string& input);

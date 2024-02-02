@@ -36,7 +36,7 @@ private:
     std::string hashPassword(const std::string& input);
     void addToFile(Account account);
     void enterLogInDetails();
-    int logIn(std::string userName, std::string password);
+    int logIn(const std::string userName, const std::string password);
 };
 
 
